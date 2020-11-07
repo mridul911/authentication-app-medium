@@ -100,7 +100,7 @@ const SignInScreen = ({navigation}) => {
         return new Promise((resolve) => {
             axios({
                 method: 'post',
-                url: 'https://footy2020.herokuapp.com/api/account/register',
+                url: '',
                 data:bodyFormData,
                 headers: {'Content-Type': 'multipart/form-data' }
             }).then((res) => {

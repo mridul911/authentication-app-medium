@@ -91,29 +91,6 @@ const SignInScreen = ({navigation}) => {
             });
         }
     }
-
-    /*const loginHandle = (userName, password) => {
-
-        const foundUser = Users.filter( item => {
-            return userName == item.username && password == item.password;
-        } );
-
-        if ( data.username.length == 0 || data.password.length == 0 ) {
-            Alert.alert('Wrong Input!', 'Username or password field cannot be empty.', [
-                {text: 'Okay'}
-            ]);
-            return;
-        }
-
-        if ( foundUser.length == 0 ) {
-            Alert.alert('Invalid User!', 'Username or password is incorrect.', [
-                {text: 'Okay'}
-            ]);
-            return;
-        }
-        console.log(foundUser)
-        signIn(foundUser);
-    }*/
     const loginHandle = (userName, password) => {
         var bodyFormData = new FormData();
         bodyFormData.append('username', userName);
@@ -121,7 +98,7 @@ const SignInScreen = ({navigation}) => {
         return new Promise((resolve) => {
             axios({
                 method: 'post',
-                url: 'https://footy2020.herokuapp.com/api/account/login',
+                url: '',
                 data:bodyFormData,
                 headers: {'Content-Type': 'multipart/form-data' }
             }).then((res) => {
@@ -143,14 +120,6 @@ const SignInScreen = ({navigation}) => {
             ]);
             return;
         }
-        /*if ( foundUser.length == 0 ) {
-            Alert.alert('Invalid User!', 'Username or password is incorrect.', [
-                {text: 'Okay'}
-            ]);
-            return;
-        }
-        console.log(foundUser)
-        signIn(foundUser);*/
         }); 
     }
 function logindone(){
@@ -255,11 +224,6 @@ function logindone(){
             <Text style={styles.errorMsg}>Password must be 8 characters long.</Text>
             </Animatable.View>
             }
-            
-
-            {/*<TouchableOpacity>
-                <Text style={{color: '#FF6347', marginTop:15}}>Forgot password?</Text>
-            </TouchableOpacity>*/}
             <View style={styles.button}>
                 <TouchableOpacity
                     style={styles.signIn}
